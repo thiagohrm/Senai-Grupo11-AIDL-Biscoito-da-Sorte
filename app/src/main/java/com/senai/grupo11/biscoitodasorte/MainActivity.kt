@@ -1,47 +1,32 @@
 package com.senai.grupo11.biscoitodasorte
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.senai.grupo11.biscoitodasorte.ui.theme.BiscoitoDaSorteTheme
 
 class MainActivity : ComponentActivity() {
+    private val fortunes = listOf(
+        "Hoje é seu dia de sorte!",
+        "A vida é uma jornada, aproveite cada passo.",
+        "A felicidade está ao seu alcance.",
+        "Você encontrará a resposta em breve.",
+        "Uma nova aventura está prestes a começar."
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            BiscoitoDaSorteTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_main) // Inflate o layout XML
+
+        val fortuneMessageTextView: TextView = findViewById(R.id.fortuneMessageTextView)
+        val revealFortuneButton: Button = findViewById(R.id.revealFortuneButton)
+
+        revealFortuneButton.setOnClickListener {
+            val randomFortune = fortunes.random() // Seleciona uma mensagem aleatória
+            fortuneMessageTextView.text = randomFortune
+            fortuneMessageTextView.visibility = View.VISIBLE // Torna o TextView visível
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    BiscoitoDaSorteTheme {
-        Greeting("Android")
-    }
-}
