@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Biscoito da Sorte</string>
+    <string name="cookie_image_description">biscoito</string>
 </resources>
