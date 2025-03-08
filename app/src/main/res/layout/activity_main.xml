@@ -1,0 +1,31 @@
+<!-- res/layout/activity_main.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#FFF3E0"> <!-- Fundo de cor creme -->
+
+    <TextView
+        android:id="@+id/fortuneMessageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clique para sua sorte!"
+        android:textSize="24sp"
+        android:textColor="#D84315"
+        android:gravity="center"
+        android:padding="16dp"
+        android:visibility="gone"/> <!-- Inicialmente invisível -->
+
+    <Button
+        android:id="@+id/revealFortuneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abrir Biscoito"
+        android:textSize="18sp"
+        android:backgroundTint="#FF7043"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>
