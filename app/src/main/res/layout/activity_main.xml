@@ -1,31 +1,67 @@
-<!-- res/layout/activity_main.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp"
-    android:background="#FFF3E0"> <!-- Fundo de cor creme -->
+    android:background="#FFF3E0">
+
 
     <TextView
         android:id="@+id/fortuneMessageTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:text="Clique para sua sorte!"
-        android:textSize="24sp"
-        android:textColor="#D84315"
         android:gravity="center"
         android:padding="16dp"
-        android:visibility="gone"/> <!-- Inicialmente invisível -->
+        android:text="Clique para sua sorte!"
+        android:textAlignment="textStart"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:visibility="gone"
+        android:textColor="#D84315"
+        android:textSize="20sp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/cookieImageView"
+        app:layout_constraintEnd_toEndOf="@+id/cookieImageView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cookieImageView"
+        app:layout_constraintTop_toTopOf="@+id/cookieImageView"
+        app:layout_constraintVertical_bias="0.516" />
+
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/cookie_image_description"
+        android:src="@drawable/fundo"
+        app:layout_constraintBottom_toBottomOf="@+id/cookieImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cookieImageView"
+        app:layout_constraintVertical_bias="0.518" />
+
+    <ImageView
+        android:id="@+id/cookieImageView"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cookie_image_description"
+        android:src="@drawable/biscoito"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/revealFortuneButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Abrir Biscoito"
-        android:textSize="18sp"
         android:backgroundTint="#FF7043"
+        android:text="Abrir Biscoito"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="24dp"/>
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cookieImageView" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
