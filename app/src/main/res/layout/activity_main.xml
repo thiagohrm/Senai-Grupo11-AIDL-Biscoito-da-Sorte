@@ -12,7 +12,7 @@
         android:id="@+id/fortuneMessageTextView"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="start"
         android:padding="16dp"
         android:text="Clique para sua sorte!"
         android:textAlignment="textStart"
